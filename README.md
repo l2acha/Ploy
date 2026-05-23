@@ -1,16 +1,21 @@
-# วิธีเปิดใช้งานและทดสอบแอป AI Studio ของคุณบนคอมพิวเตอร์
-ไฟล์นี้รวมทุกอย่างที่คุณต้องใช้ในการสั่งรันแอปพลอยใส (Ploysai) ในเครื่องคอมพิวเตอร์ของคุณเองครับ
-🔗 **ลิงก์ดูหน้าตาแอปบนเว็บ AI Studio:** https://ai.studio/apps/e21b1537-7135-41ae-a3ca-452e2e2694b5
-## 🛠️ ขั้นตอนการรันแอปบนคอมพิวเตอร์ (Run Locally)
-**สิ่งที่ต้องเตรียมก่อนเริ่ม:** ติดตั้งโปรแกรม Android Studio บนคอมพิวเตอร์ของคุณให้เรียบร้อย
- 1. **เปิดโปรแกรม:** เปิด Android Studio ขึ้นมา
- 2. **เปิดโปรเจกต์:** คลิกที่คำสั่ง **Open** แล้วเลือกโฟลเดอร์ (Directory) ที่เก็บไฟล์โปรเจกต์แอปตัวนี้
- 3. **อัปเดตระบบ:** หากโปรแกรมแจ้งเตือนว่ามีโค้ดบางส่วนไม่เข้ากัน ให้กดตกลงเพื่อให้ Android Studio ช่วยแก้ไขระบบระหว่างนำเข้า (Import) โปรเจกต์อัตโนมัติ
- 4. **ใส่รหัส API Key:** * สร้างไฟล์ใหม่ชื่อ .env ไว้ในโฟลเดอร์หลักของโปรเจกต์
-   * จากนั้นเขียนโค้ดระบุรหัสคีย์ของคุณป๋อลงไปในไฟล์นั้นแบบนี้: GEMINI_API_KEY=รหัสคีย์ของคุณ (สามารถดูตัวอย่างการตั้งค่าได้ในไฟล์ .env.example)
- 5. **ปรับแก้ไฟล์ระบบ:** เปิดไฟล์ build.gradle.kts ของตัวแอป แล้วทำความสะอาดโค้ดโดย **ลบบรรทัดนี้ทิ้งออกไป**:
-   ```kotlin
-   signingConfig = signingConfigs.getByName("debugConfig")
-   
-   ```
- 6. **ทดสอบแอปได้เลย:** กดปุ่ม Run (ปุ่มลูกศรสีเขียว) เพื่อติดตั้งและเปิดใช้งานแอปบนมือถือจำลอง (Emulator) หรือบนโทรศัพท์จริงของคุณป๋อได้เลยครับ
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
+
+# Run and deploy your AI Studio app
+
+This contains everything you need to run your app locally.
+
+View your app in AI Studio: https://ai.studio/apps/e21b1537-7135-41ae-a3ca-452e2e2694b5
+
+## Run Locally
+
+**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+
+
+1. Open Android Studio
+2. Select **Open** and choose the directory containing this project
+3. Allow Android Studio to fix any incompatibilities as it imports the project.
+4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
+5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
+6. Run the app on an emulator or physical device
